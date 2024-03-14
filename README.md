@@ -1,8 +1,7 @@
-###  DATE: 
-
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  DATE: 14.03.2024
+###  NAME: HARISH G
+###  ROLL NO : 212222243001
+###  DEPARTMENT: AIML
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -74,9 +73,46 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```
+#include<Servo.h>
+Servo s1;
 
+int pos = 0;
 
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos++){
+    s1.write(pos);
+    delay(20); //milliseconds
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    //delay(500);
+  }
+  for(pos=180;pos>=0;pos--){
+    s1.write(pos);
+    delay(20); //milliseconds
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    //delay(500);
+  }
+}
+```
+### OUTPUT:
+#### CIRCUIT:
+![Screenshot 2024-03-14 113035](https://github.com/Harish2404lll/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/141472096/dbdabfe5-22f4-4b01-abfa-69ac5d41e61f)
+
+#### SCHEMATIC DIAGRAM: 
+![Screenshot 2024-03-14 113406](https://github.com/Harish2404lll/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/141472096/89bcfb5d-84c7-4f88-a13c-d31ede593816)
+
+#### GRAPH:
+![Screenshot 2024-03-14 113645](https://github.com/Harish2404lll/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/141472096/75143eb9-2fc6-4dd9-a85e-a7778528803e)
 
 
 
